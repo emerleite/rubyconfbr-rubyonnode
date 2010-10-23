@@ -1,0 +1,15 @@
+<h1>Tempo Real - Lances</h1>
+<div id="lances"></div>
+    
+    
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="http://<%= AppConfig['node_host'] %>/faye.js"></script>
+<script>
+var client = new Faye.Client('http://<%= AppConfig['node_host'] %>/faye', {
+  timeout: 120
+});
+      
+client.subscribe('/temporeal', function(lance) {
+  $("#lances").append(lance.texto + "<br/>");
+  });
+</script>

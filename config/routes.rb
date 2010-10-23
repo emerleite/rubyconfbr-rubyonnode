@@ -1,6 +1,7 @@
 Rubyconf::Application.routes.draw do
 
   controller :lance do
+    get "lance/todos", :to => :todos, :as => "todos"
     get "lance/novo", :to => :novo, :as => "novo"
     post "lance/enviar", :to => :enviar, :as => "enviar"
   end
