@@ -1,0 +1,13 @@
+defaults: &defaults
+  node_host: localhost:8000
+  node_token: abc
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+  node_host: emerleite.no.de
