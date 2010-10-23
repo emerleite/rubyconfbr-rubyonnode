@@ -1,6 +1,6 @@
 class LanceController < ApplicationController
   def enviar
-    HTTParty.post("http://emerleite.no.de/lance", 
+    HTTParty.post("http://emerleite.no.de/lance?token=abc", 
       :headers => {"Content-Type" => "application/json"},
       :body => {:texto => params[:texto], :link => params[:link]}.to_json
     )

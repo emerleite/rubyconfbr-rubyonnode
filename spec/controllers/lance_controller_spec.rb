@@ -3,7 +3,7 @@ require 'spec_helper'
 describe LanceController do
   it 'should post to emerleite.no.de' do
     lance = {:texto => 'Gol do Flamengo', :link => 'http://www.youtube.com/watch?v=zr3N1hm7W7M'}
-    HTTParty.should_receive(:post).with("http://emerleite.no.de/lance",
+    HTTParty.should_receive(:post).with("http://emerleite.no.de/lance?token=abc",
       :headers => {"Content-Type" => "application/json"},
       :body => lance.to_json)
     post :enviar, :texto => 'Gol do Flamengo', :link => 'http://www.youtube.com/watch?v=zr3N1hm7W7M'
