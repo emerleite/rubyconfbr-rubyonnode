@@ -1,0 +1,9 @@
+<h1>Tempo Real - Enviar lance</h1>
+<%= flash[:notice]%><br/>
+<%= form_tag(:controller => :lance, :action => :enviar, :method => :post) do %>
+  <%= label_tag(:link, "Link:") %>
+  <%= text_field_tag(:link, nil, :size => "100") %><br/>
+  <%= label_tag(:texto, "Texto:") %>
+  <%= text_area_tag(:texto,"", :size => "70x10") %><br/>
+  <%= submit_tag("Enviar Lance") %>
+<% end %>

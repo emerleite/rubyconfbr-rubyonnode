@@ -1,4 +1,10 @@
 Rubyconf::Application.routes.draw do
+
+  controller :lance do
+    get "lance/novo", :to => :novo, :as => "novo"
+    post "lance/enviar", :to => :enviar, :as => "enviar"
+  end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
