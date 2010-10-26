@@ -2,7 +2,12 @@
 <%= form_tag(:controller => :lance, :action => :enviar, :method => :post) do %>
   <%= label_tag(:equipe, "Time:") %>
   <%= select_tag(:equipe, options_for_select([['Flamengo', 'Flamengo'], ['Corinthians', 'Corinthians']])) %><br/>
-  <%= label_tag(:texto, "Descrição do lance:") %><br/>
   <%= text_area_tag(:texto,"", :size => "70x10") %><br/>
-  <%= submit_tag("Enviar Lance") %><%= flash[:notice]%>
+  <%= submit_tag("Enviar Lance") %><span id="mensagem"><%= flash[:notice]%></span>
 <% end %>
+
+<script>
+  window.setInterval(function() {
+    document.getElementById('mensagem').innerHTML = '';
+  }, 2000);
+</script>
