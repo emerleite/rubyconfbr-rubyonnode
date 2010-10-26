@@ -1,9 +1,8 @@
-<h1>Tempo Real - Enviar lance</h1>
-<%= flash[:notice]%><br/>
+<h1>Tempo Real - Flamengo x Corinthians</h1>
 <%= form_tag(:controller => :lance, :action => :enviar, :method => :post) do %>
-  <%= label_tag(:link, "Link:") %>
-  <%= text_field_tag(:link, nil, :size => "100") %><br/>
-  <%= label_tag(:texto, "Texto:") %>
+  <%= label_tag(:time, "Time:") %>
+  <%= select_tag(:time, options_for_select([['Flamengo', 'Flamengo'], ['Corinthians', 'Corinthians']])) %><br/>
+  <%= label_tag(:texto, "Descrição do lance:") %><br/>
   <%= text_area_tag(:texto,"", :size => "70x10") %><br/>
-  <%= submit_tag("Enviar Lance") %>
+  <%= submit_tag("Enviar Lance") %><%= flash[:notice]%>
 <% end %>
